@@ -1,0 +1,111 @@
+.mp_component__slideout {
+	position: fixed;
+	height: 100vh;
+	width: 100%;
+	left: 0;
+	top: 0;
+
+	.bg_layers {
+		position: relative;
+		height: 100%;
+		.bg_layer {
+			background-color: $color_shade1;
+			left: 0;
+			position: absolute;
+			width: 100%;
+			z-index: 997;
+			&:nth-child(1) {
+				top: 0;
+			}
+			&:nth-child(2) {
+				top: 33%;
+			}
+			&:nth-child(3) {
+				top: 67%;
+			}
+		}
+	}
+
+	.options {
+		position: fixed;
+		width: 100%;
+		height: 100vh;
+		@include layout_flex(column, center, center);
+		top: 0;
+		left: 0;
+		z-index: 998;
+		color: $color_primary;
+
+		.option {
+			h1 {
+				pointer-events: none;
+				cursor: pointer;
+				padding: 5px 0;
+				margin: 5px 0;
+			}
+
+			.hover_slide {
+				height: 3px;
+				background-color: $color_white;
+				width: 0;
+				transition: width 0.2s ease;
+			}
+
+			&:hover {
+				.hover_slide {
+					width: 100%;
+				}
+			}
+		}
+	}
+
+	&.open {
+		pointer-events: none;
+		.bg_layer {
+			&:nth-child(1) {
+				transition: height 0.4s ease 0.8s, border-bottom 1s;
+				height: 0%;
+			}
+			&:nth-child(2) {
+				transition: height 0.4s ease 0.4s, border-bottom 1s;
+				height: 0%;
+			}
+			&:nth-child(3) {
+				transition: height 0.4s ease, border-bottom 1s;
+				height: 0%;
+			}
+		}
+
+		.options {
+			color: $color_primary;
+			transition: opacity 0.2s ease;
+			opacity: 0;
+		}
+	}
+
+	&.closed {
+		.bg_layer {
+			&:nth-child(1) {
+				transition: height 0.4s ease, border-bottom 1s;
+				height: 33%;
+			}
+			&:nth-child(2) {
+				transition: height 0.4s ease 0.4s, border-bottom 1s;
+				height: 34%;
+			}
+			&:nth-child(3) {
+				transition: height 0.4s ease 0.8s, border-bottom 1s;
+				height: 33%;
+			}
+		}
+
+		.options {
+			transition: opacity 0.3s ease 0.8s;
+			opacity: 1;
+
+			.option {
+				h1 {pointer-events: auto};
+			}
+		}
+	}
+}

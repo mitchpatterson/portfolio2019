@@ -1,0 +1,14 @@
+.mp_container__work {
+	width: 100%;
+	background-color: $color_white;
+	padding: 40px;
+
+	h6 {
+		font-weight: $font_weight_header3;
+	}
+
+	.work_projects {
+		flex-wrap: wrap;
+		@include layout_flex(row);
+	}
+}

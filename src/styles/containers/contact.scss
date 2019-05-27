@@ -1,0 +1,24 @@
+.mp_container__contact {
+	width: 100%;
+	background-color: $color_primary;
+	padding: 40px;
+
+	h6 {
+		font-weight: $font_weight_header3;
+	}
+
+	h6, p {
+		color: $color_white;
+	}
+
+	.social_media_links {
+		padding: 20px 0;
+		a {
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
