@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { WorkItem } from "../../components";
 // import PropTypes from "prop-types";
 
-import { Explor, FotoScope } from "../../media";
+import { Explor, FotoScope, D3 } from "../../media";
 
 export class WorkContainer extends Component {
     static propTypes = {};
@@ -24,6 +24,12 @@ export class WorkContainer extends Component {
             href: "https://github.com/mitchpatterson/FotoScope",
             description: "An Ionic & Angular project based on inspiring photographers using the Flickr API.",
             svg: <FotoScope />
+        }, {
+            title: "D3 Experimentation",
+            skills: "D3 | React",
+            href: "https://mitchpatterson.github.io/experiment_d3/",
+            description: "Ongoing experiment and creation of latest d3 capabilities.. expect more soon!",
+            svg: <D3 />
         }];
     }
 
