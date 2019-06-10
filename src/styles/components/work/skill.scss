@@ -1,0 +1,137 @@
+.mp_component__skill {
+	margin-top: 10px;
+	padding: 20px;
+	background-color: white;
+	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+	height: 163px;
+	width: 283px;
+	position: relative;
+	margin-right: 10px;
+	cursor: pointer;
+	@include layout_flex(column, center, center);
+
+	&:last-child {
+		margin-right: 0;
+	}
+
+	span {
+		margin-bottom: 0;
+		transition: margin-bottom 0.5s ease, transform 0.5s ease;
+		transform: scale(1);
+	}
+
+	.skill_wrap {
+		position: absolute;
+		top: 70%;
+		left: 50%;
+		transform: translate(-50%, 0);
+		width: 80%;
+		height: 20px;
+		opacity: 0;
+		transition: opacity 0.2s ease;
+
+		.skill_bar {
+			width: 100%;
+			height: 100%;
+			border: 2px solid $color_primary;
+			position: relative;
+
+			.skill_level {
+				position: absolute;
+				top: 0;
+				left: 0;
+				height: 100%;
+				width: 0;
+				background-color: $color_purple2;
+				transition: width 0.5s ease 0.2s;
+			}
+		}
+
+		.skill_end {
+			position: absolute;
+			top: -5px;
+			left: calc(100% + 20px);
+			opacity: 0;
+			width: 3px;
+			height: calc(100% + 10px);
+			background-color: $color_shade1;
+			transition: left 0.5s ease, opacity 1s ease;
+		}
+
+		.skill_string {
+			position: absolute;
+			top: -25px;
+			left: calc(100% + 20px);
+			color: $color_shade1;
+			opacity: 0;
+			font-size: 14px;
+			transition: left 0.5s ease;
+		}
+
+		.skill_years {
+			position: absolute;
+			top: calc(100% + 5px);
+			left: calc(100% + 20px);
+			color: $color_shade1;
+			opacity: 0;
+			font-size: 14px;
+			transition: left 0.5s ease;
+			white-space: nowrap;
+		}
+	}
+
+	&:hover {
+		.skill_wrap {
+			opacity: 1;
+			.skill_bar {
+				.skill_level {
+					&.level_ {
+						&1 {width: 20%;}
+						&2 {width: 40%;}
+						&3 {width: 60%;}
+						&4 {width: 80%;}
+						&5 {width: 100%;}
+					}
+				}
+
+				.skill_end {
+					opacity: 1;
+					&.level_ {
+						&1 {left: 20%;}
+						&2 {left: 40%;}
+						&3 {left: 60%;}
+						&4 {left: 80%;}
+						&5 {left: 100%;}
+					}
+				}
+
+				.skill_string {
+					opacity: 1;
+					&.level_ {
+						&1 {left: 20%;}
+						&2 {left: 40%; transform: translate(-50%, 0);}
+						&3 {left: 60%; transform: translate(-50%, 0);}
+						&4 {left: 80%; transform: translate(-50%, 0);}
+						&5 {left: 100%; transform: translate(-100%, 0);}
+					}
+				}
+
+				.skill_years {
+					opacity: 1;
+					&.level_ {
+						&1 {left: 20%;}
+						&2 {left: 40%; transform: translate(-50%, 0);}
+						&3 {left: 60%; transform: translate(-50%, 0);}
+						&4 {left: 80%; transform: translate(-50%, 0);}
+						&5 {left: 100%; transform: translate(-100%, 0);}
+					}
+				}
+			}
+		}
+
+		span {
+			margin-bottom: 40px;
+			transform: scale(1.5);
+		}
+	}
+}

@@ -25,7 +25,7 @@ export class ContactContainer extends Component {
                         <Github />
                     </Link>
                 </div>
-                <p>© Mitchell Patterson 2019</p>
+                <p>{`${String.fromCharCode(169)} Mitchell Patterson 2019`}</p>
 			</div>
         );
     }
