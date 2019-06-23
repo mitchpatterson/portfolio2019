@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { WorkItem } from "../../components";
 // import PropTypes from "prop-types";
 
-import { Explor, FotoScope, D3, Calendeer } from "../../media";
+import { Explor, FotoScope, D3, Calendeer, Snowman } from "../../media";
 
 export class WorkContainer extends Component {
     static propTypes = {};
@@ -25,17 +25,23 @@ export class WorkContainer extends Component {
             description: "An Ionic & Angular project based on inspiring photographers using the Flickr API.",
             svg: <FotoScope />
         }, {
-            title: "D3 Experimentation",
-            skills: "D3 | React",
-            href: "https://mitchpatterson.github.io/experiment_d3/",
-            description: "Ongoing experiment and creation of latest d3 capabilities.. expect more soon!",
-            svg: <D3 />
-        }, {
             title: "Calendeer",
             skills: "React | Jest | Unsplash API",
             href: "https://mitchpatterson.github.io/calendeer/",
             description: "Calendeer is an photo inspired application that grabs the latest animal (by default, but you can choose whatever category you want) photos based on your keyword search and creates a desktop calendar.",
             svg: <Calendeer />
+        }, {
+            title: "D3 Experiments",
+            skills: "D3 | React",
+            href: "https://mitchpatterson.github.io/experiment_d3/",
+            description: "Ongoing experiment and creation of latest d3 capabilities.. expect more soon!",
+            svg: <D3 />
+        }, {
+            title: "Save That Snowman!",
+            skills: "Javascript | Canvas | create.js",
+            href: "http://mitchpatterson.github.io/snowHangman/",
+            description: "HTML canvas game powered by create.js. Inspired by the classic hangman game - and it being christmas at the time of development",
+            svg: <Snowman />
         }];
     }
 

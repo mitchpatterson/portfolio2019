@@ -8,6 +8,7 @@
 	position: relative;
 	margin-right: 10px;
 	cursor: pointer;
+	transition: all 0.8s ease;
 	@include layout_flex(column, center, center);
 
 	&:last-child {
@@ -35,6 +36,7 @@
 			height: 100%;
 			border: 2px solid $color_primary;
 			position: relative;
+			background-color: white;
 
 			.skill_level {
 				position: absolute;
@@ -80,7 +82,8 @@
 		}
 	}
 
-	&:hover {
+	&:hover, &.active {
+		background-color: rgb(200, 200, 200);
 		.skill_wrap {
 			opacity: 1;
 			.skill_bar {

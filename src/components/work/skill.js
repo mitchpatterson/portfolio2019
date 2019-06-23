@@ -11,6 +11,10 @@ export class Skill extends Component {
 
     constructor(props) {
         super(props);
+
+        this.state = {
+            active: false
+        };
     }
 
     skillString(level) {
@@ -33,7 +37,7 @@ export class Skill extends Component {
         const { label, level, years } = skill;
 
         return (
-            <div className="mp_component__skill">
+            <div className={`mp_component__skill${!this.state.active ? "" : " active"}`} onClick={() => this.setState({active: !this.state.active})}>
             	<span>{label}</span>
                 <div className="skill_wrap">
                     <div className="skill_bar">
